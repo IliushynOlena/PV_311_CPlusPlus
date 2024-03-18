@@ -199,6 +199,12 @@ int main()
 {
 	//Hello(10);
 	Foo(4);
+	Foo(4);
+	Foo(4);
+	Foo(4);
+	Foo(4);
+	Foo(4);
+	Foo(4);
 	srand(time(0));
 	const int size = 20;
 	int arr[size];
