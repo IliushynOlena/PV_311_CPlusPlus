@@ -73,7 +73,6 @@ void ShakerSort(int arr[], int size)
 	int j, index = size - 1;//9
 	int left = 1, right = size - 1;
 	int temp;
-
 	do
 	{
 		for ( j = right; j >= left; j--)
@@ -155,7 +154,6 @@ void QuickSort(int arr[], int B, int E)
 {
 	int i = B, j = E;
 	int temp, p;
-
 	p = arr[(B + E) / 2];
 	do
 	{ 
