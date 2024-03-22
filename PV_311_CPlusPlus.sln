@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10_Pointers", "10_Pointers\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11_LinksSetPosSetColorSetw", "11_LinksSetPosSetColorSetw\11_LinksSetPosSetColorSetw.vcxproj", "{65DA7285-76AF-4967-88EC-E4407E4F7266}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12_C_Style", "12_C_Style\12_C_Style.vcxproj", "{AB89154D-BB19-4D48-B419-1E46FD75A577}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{65DA7285-76AF-4967-88EC-E4407E4F7266}.Release|x64.Build.0 = Release|x64
 		{65DA7285-76AF-4967-88EC-E4407E4F7266}.Release|x86.ActiveCfg = Release|Win32
 		{65DA7285-76AF-4967-88EC-E4407E4F7266}.Release|x86.Build.0 = Release|Win32
+		{AB89154D-BB19-4D48-B419-1E46FD75A577}.Debug|x64.ActiveCfg = Debug|x64
+		{AB89154D-BB19-4D48-B419-1E46FD75A577}.Debug|x64.Build.0 = Debug|x64
+		{AB89154D-BB19-4D48-B419-1E46FD75A577}.Debug|x86.ActiveCfg = Debug|Win32
+		{AB89154D-BB19-4D48-B419-1E46FD75A577}.Debug|x86.Build.0 = Debug|Win32
+		{AB89154D-BB19-4D48-B419-1E46FD75A577}.Release|x64.ActiveCfg = Release|x64
+		{AB89154D-BB19-4D48-B419-1E46FD75A577}.Release|x64.Build.0 = Release|x64
+		{AB89154D-BB19-4D48-B419-1E46FD75A577}.Release|x86.ActiveCfg = Release|Win32
+		{AB89154D-BB19-4D48-B419-1E46FD75A577}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
