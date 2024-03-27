@@ -56,6 +56,33 @@ void DeleteRowInTheEnd(int** &arr, int& rows, int cols)
 	rows--;
 	arr = temp;
 }
+void AddColumnInTheEnd(int** &arr, int rows, int& cols)
+{
+	int** temp = new int* [rows];
+	for (int i = 0; i < rows; i++)
+	{
+		temp[i] = new int[cols + 1];
+	}
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			temp[i][j] = arr[i][j]; 			
+		}
+		temp[i][cols] = 7;
+	}
+	for (int i = 0; i < rows; i++)
+	{
+		delete[]arr[i];
+	}
+	delete[]arr;
+	cols++;
+	arr = temp;
+	//for (int i = 0; i < rows; i++)
+	//{
+	//	temp[i][cols] = 7;
+	//}
+}
 
 
 int main()
@@ -81,6 +108,13 @@ int main()
 	ShowArr(arr, rows, cols);
 
 	DeleteRowInTheEnd(arr, rows, cols);
+	ShowArr(arr, rows, cols);
+
+	AddColumnInTheEnd(arr, rows, cols);
+	ShowArr(arr, rows, cols);
+	AddColumnInTheEnd(arr, rows, cols);
+	ShowArr(arr, rows, cols);
+	AddColumnInTheEnd(arr, rows, cols);
 	ShowArr(arr, rows, cols);
 
 	for (int i = 0; i < rows; i++)
