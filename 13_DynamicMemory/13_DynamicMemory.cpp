@@ -48,6 +48,20 @@ int* AddNumber(int* arr, int *size, int number)
     arr = temp;
     return arr;
 }
+void Swap(int& a, int& b)
+{
+
+}
+void SwapCols(int maxtrix[][10], int row, int col)
+{
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            Swap(maxtrix[i][0], maxtrix[i][1]);
+        }
+    }
+}
 int main()
 {
     srand(time(0));
