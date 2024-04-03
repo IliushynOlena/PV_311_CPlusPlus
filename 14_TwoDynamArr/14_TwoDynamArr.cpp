@@ -70,6 +70,7 @@ void AddColumnInTheEnd(int** &arr, int rows, int& cols)
 			temp[i][j] = arr[i][j]; 			
 		}
 		temp[i][cols] = 7;
+
 	}
 	for (int i = 0; i < rows; i++)
 	{
