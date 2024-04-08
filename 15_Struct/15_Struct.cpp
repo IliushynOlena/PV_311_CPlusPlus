@@ -92,7 +92,7 @@ int main()
 	//int monthBirthday = 12;
 	//int yearBirthday = 2000;
 	////int dayB[3] = { 25,12,2000 , "December"};//error
-	//Date myBirthday = { 25,12,2000, "December" };//object
+	//Date myBirthday{ 25,12,2000, "December" };//object
 	//cout << "============== My Birthday =================" << endl;
 	//cout << "Day : " << myBirthday.day << endl;
 	//cout << "Month : " << myBirthday.month << endl;
