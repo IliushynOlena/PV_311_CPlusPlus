@@ -14,10 +14,7 @@ class Array
     int* arr;
     int size;
 public:
-    Array()
-    {
-
-    }
+    Array() {}
     explicit Array(int size)//явно
     {
         this->size = size;
