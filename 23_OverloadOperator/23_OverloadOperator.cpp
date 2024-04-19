@@ -82,8 +82,7 @@ public:
         else
             return false;*/
         return (this->x + this->y) > (other.x + other.y);
-    }
-   
+    }   
     bool operator <= (const Point& other)const
     {
         return (this->x + this->y) <= (other.x + other.y);

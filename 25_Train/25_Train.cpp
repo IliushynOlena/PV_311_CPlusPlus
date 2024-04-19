@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 struct Carriage
@@ -154,6 +155,17 @@ public:
             }
         }
     }
+    operator string()
+    {
+        //string res = "";
+        //for (int i = 0; i < count_carriage; i++)
+        //{
+        //    //string + int + string
+        //    res += to_string( carriages[i].number) + " ";
+        //}
+        //return res;
+        return model;
+    }
 
 
 };
@@ -164,6 +176,10 @@ int main()
     train.Show();
     train.Add_carriages(2);
     train.Show();
+
+    cout << "Operator string : " <<(string) train << endl;
+
+
     //train.Add_carriages(3);
     //train.Show();
     train.Add_one_pass(1);
