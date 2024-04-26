@@ -6,6 +6,7 @@ using namespace std;
 template<typename T>
 class Queue
 {
+public:
 	struct Element {
 		T value;
 		int priority;
@@ -26,10 +27,10 @@ public:
 		if (arr != nullptr)
 			delete[]arr;
 	}
-	void Enqueue(Element element) 
+	void Enqueue(T value, int pr) 
 	{
 		int index = 0;
-		while (index < size &&  arr[index].priority < element.priority)
+		while (index < size &&  arr[index].priority < pr)
 		{
 			index++;
 		}
@@ -39,7 +40,7 @@ public:
 		{
 			temp[i] = arr[i];
 		}
-		temp[index] = element;
+		temp[index] = Element{value, pr};
 		for (int i = index; i < size - 1; i++)
 		{
 			temp[i + 1] = arr[i];
@@ -88,16 +89,24 @@ public:
 int main()
 {
 	Queue<char> q;
-	Element<T> el = { 'A', 1};
-	q.Enqueue(el);
-	q.Enqueue(Element<T>{ 'B',2 });
-	q.Enqueue(Element<T>{ 'C',3 });
-	q.Enqueue(Element{ 'G',5 });
-	q.Enqueue(Element{ 'K',8 });
-	q.Enqueue(Element{ 'N',13 });
+	//Element<T> el = { 'A', 1};
+	//q.Enqueue(el);
+
+	q.Enqueue( 'A',1 );
+	q.Enqueue( 'B',2 );
+	q.Enqueue( 'C',3 );
+	q.Enqueue( 'G',5 );
+	q.Enqueue( 'K',8 );
+	q.Enqueue( 'N',13 );
 	q.Print();
-	q.Enqueue(Element{ 'D',4 });
+	q.Enqueue('D',4 );
 	q.Print();
+	while (!q.IsEmpty())
+	{
+		cout << "Element : " << q.Dequeue().value << endl;
+	}
+
+
   
 }
 
