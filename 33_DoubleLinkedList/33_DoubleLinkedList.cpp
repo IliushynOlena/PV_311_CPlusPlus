@@ -1,17 +1,16 @@
-
 #include <iostream>
 using namespace std;
 
-struct Node
-{
-    Node* prev;
-    int value;
-    Node* next;
-    Node(Node *prev, int value, Node* next) : prev(prev), value(value), next(next) {}
-};
-
+template<typename T>
 class List
 {
+    struct Node
+    {
+        Node* prev;
+        T value;
+        Node* next;
+        Node(Node* prev, T value, Node* next) : prev(prev), value(value), next(next) {}
+    };
 private:
     Node* head;
     Node* tail;
@@ -21,14 +20,13 @@ public:
         head = nullptr;
         tail = nullptr;
     }
-    bool IsEmpty()
+    bool IsEmpty()const
     {
         return head == nullptr;
     }
-    void AddToHead(int value)
+    void AddToHead(T value)
     {
         Node* newNode = new Node(nullptr, value, head);
-
         if (IsEmpty())
         {
             head = tail = newNode;
@@ -38,7 +36,6 @@ public:
     }
     void Print()
     { 
-
         for (Node* i = head; i != nullptr; i = i->next)
         {
             cout << i->value << " ";
@@ -55,7 +52,7 @@ public:
             delete current;
         }
     }
-    void AddToTail(int value)
+    void AddToTail(T value)
     {
         Node* newNode = new Node(tail, value, nullptr);
         if (head == nullptr)
@@ -84,7 +81,7 @@ public:
             tail->next = nullptr;
         }
     }
-    int GetElementByPosition(int pos)
+    T GetElementByPosition(int pos)
     {
         Node* current = head;
         int i = 1;
@@ -96,7 +93,7 @@ public:
         }
         return 0;
     }
-    int operator[](int pos)
+    T operator[](int pos)
     {
         Node* current = head;
         int i = 1;
@@ -108,21 +105,98 @@ public:
         }
         return 0;
     }
+    void DeleteFromHead()
+    {
+        if (head == tail)
+        {
+            delete head;
+            head = tail = nullptr;
+        }
+        else {
+            head = head->next;
+            delete head->prev;
+            head->prev = nullptr;
+        }
+    }
 
 };
-struct Vagon {
-
+struct Carriage
+{
+    int number;
+    int places;
+    int passagers;
+    Carriage():number(0),places(0),passagers(0){}
+    Carriage(int n, int pl, int pass):number(n),places(pl),passagers(pass){}
+    void Show()
+    {
+        cout << "Number: " << number << endl;
+        cout << "Places: " << places << endl;
+        cout << "Passagers: " << passagers << endl;
+    }
 };
-class Train {
+ostream& operator << (ostream& out, const Carriage& c)
+{
+    out << "Carriage Number: " << c.number << endl;
+    out << "Places: " << c.places << endl;
+    out << "Passagers: " << c.passagers << endl << endl;;
+    return out;
+}
+
+class Train 
+{
 private:
     string model;
     int count_vagons;
-    List vagons;
+    List<Carriage> vagons;
+public:
+    Train(string model)
+    {
+        this->model = model;
+        count_vagons = 0;
+    }
+    void AddCarriageToHead(Carriage c)
+    {
+        vagons.AddToHead(c);
+        count_vagons++;
+    }
+    void AddCarriageToTail(Carriage c)
+    {
+        vagons.AddToTail(c);
+        count_vagons++;
+    }
+    void DeleteCarriageFromHead()
+    {
+        vagons.DeleteFromHead();
+        count_vagons--;
+    }
+    void DeleteCarriageFromTail()
+    {
+        vagons.DeleteFromTail();
+        count_vagons--;
+    }
+    void Print()
+    {
+        cout << "Model Train : " << model << endl;
+        vagons.Print();
+        cout << "_____________________________________" << endl;
+    }
 };
 
 int main()
 {
-    List list;
+    Train train("Tom");
+    train.AddCarriageToHead(Carriage(1, 20, 3));
+    train.AddCarriageToHead(Carriage(2, 10, 2));
+    train.AddCarriageToHead(Carriage(3, 50, 33));
+    train.Print();
+    train.AddCarriageToTail(Carriage(4, 40, 40));
+    train.Print();
+    train.DeleteCarriageFromTail();
+    train.Print();
+    train.DeleteCarriageFromHead();
+    train.Print();
+    /*
+    List<int> list;
     list.AddToHead(10);
     list.AddToHead(20);
     list.AddToHead(30);
@@ -140,6 +214,6 @@ int main()
     list.Print();
     list.DeleteFromTail();
     list.Print();
-    
+    */
 }
 
