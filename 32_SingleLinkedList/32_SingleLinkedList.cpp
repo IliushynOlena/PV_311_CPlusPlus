@@ -28,12 +28,17 @@ public:
     }
     void Print()
     {
-        Node* current = head;
-        while (current!= nullptr)
+        //Node* current = head;//int i = 0;
+        //while (current!= nullptr)//i < 10;
+        //{
+        //    cout << current->value << " ";
+        //    current = current->next;//i++
+        //}  
+
+        for (Node* i = head; i != nullptr;  i = i->next)
         {
-            cout << current->value << " ";
-            current = current->next;
-        }  
+            cout << i->value << " ";
+        }
         cout << endl;
     }
     ~List()
@@ -95,6 +100,18 @@ public:
         }
         return 0;
     }
+    int operator[](int pos)
+    {
+        Node* current = head;
+        int i = 1;
+        while (current != nullptr)
+        {
+            if (pos == i)return current->value;
+            current = current->next;
+            i++;
+        }
+        return 0;
+    }
 
 };
 
@@ -113,6 +130,9 @@ int main()
     cout << "Element [5] = " << list.GetElementByPosition(5) << endl;
     cout << "Element [100] = " << list.GetElementByPosition(100) << endl;
 
+    cout << "Element [2] = " << list[2] << endl;
+    cout << "Element [5] = " << list[5]<< endl;
+    cout << "Element [100] = " << list[100] << endl;
     list.DeleteFromTail();
     //list.DeleteFromTail();
     list.Print();
