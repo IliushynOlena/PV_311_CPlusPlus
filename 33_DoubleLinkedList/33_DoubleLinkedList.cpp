@@ -1,4 +1,5 @@
 #include <iostream>
+#include <list>
 using namespace std;
 
 template<typename T>
@@ -184,6 +185,8 @@ public:
 
 int main()
 {
+    list<int> list;
+    
     Train train("Tom");
     train.AddCarriageToHead(Carriage(1, 20, 3));
     train.AddCarriageToHead(Carriage(2, 10, 2));
