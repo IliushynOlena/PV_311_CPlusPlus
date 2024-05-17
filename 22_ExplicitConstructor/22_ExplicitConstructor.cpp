@@ -53,10 +53,10 @@ void Display(const Array& arr)
     }
     cout << endl;
 }
-class Student
+class Person
 {
 public:
-    Student(int age)
+    Person(int age)
     {
 
     }
@@ -76,8 +76,8 @@ int main()
     //Array arr2 = 10;//implicit int ===> Array
     //Display(15);
     //Display(arr2);
-    Student st(15);//constructor
-    Student st2 = 45;
+    Person st(15);//constructor
+    Person st2 = 45;
     /*
     //explicit implicit
 

@@ -7,7 +7,7 @@ struct Point
     int y;
 };
 
-class Student
+class Person
 {
 private:
 	string name;
@@ -24,7 +24,7 @@ public:
 	// Використовується для ініціалізації полів
 
 	// Конструктора за замовчуванням (default ctor) - без параметрів
-	Student()
+	Person()
 	{
 		name = "";
 		age = 0;
@@ -33,7 +33,7 @@ public:
 	}
 
 	// Параметризований конструктор - який приймає якісь параметри
-	Student(string name, int age)
+	Person(string name, int age)
 	{
 		this->name = name;
 		this->age = age;
@@ -43,7 +43,7 @@ public:
 		cout << "Paramerized Constructor [" << name << "]...\n";
 	}
 	//copy constructor
-	Student(const Student & other)
+	Person(const Person & other)
 	{
 		this->name = other.name;
 		this->age = other.age;
@@ -60,7 +60,7 @@ public:
 	}
 	// Деструктор - метод, який викликається автоматично при видаленні об'єкта класу
 	// Використовується для очищення пам'яті, звільнення ресурсів і тд.
-	~Student()
+	~Person()
 	{
 		if (marks != nullptr)
 			delete[] marks;
@@ -112,8 +112,8 @@ class Train
 
 int main()
 {
-	Student testSt;					// виклик конструктора за замовчуванням
-	Student st("Viktor", 15);	// виклик параметризованого конструктора
+	Person testSt;					// виклик конструктора за замовчуванням
+	Person st("Viktor", 15);	// виклик параметризованого конструктора
 
 	st.AddMark(8);
 	st.AddMark(7);
@@ -123,7 +123,7 @@ int main()
 	st.Print();
 
 	{
-		Student st3(st);//Student st3 = Student(st);
+		Person st3(st);//Student st3 = Student(st);
 		st3.Print();
 	}
 

@@ -65,7 +65,7 @@ public:
 	}
 };
 
-class Student
+class Person
 {
 //private:
 //protected:
@@ -115,9 +115,9 @@ public:
 };
 int main()
 {
-	Student student;//object 
-	Student student1;//object 
-	Student student2;//object 
+	Person student;//object 
+	Person student1;//object 
+	Person student2;//object 
 	student.setName("Valera");
 	student.setSurname("Kyluk");
 	student.setMark(10,0) ;

@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Student//private
+class Person//private
 {
 private:
     string name ;
@@ -20,7 +20,7 @@ private:
     }
 public:
    
-    Student()//default constructor
+    Person()//default constructor
     {
         cout << "Constructor default........" << endl;
         name = "None";
@@ -29,7 +29,7 @@ public:
         marks = nullptr;
         averageMark = 0;
     }
-    Student(string name, int age)//parametrized constructor
+    Person(string name, int age)//parametrized constructor
     {
         cout << "Constructor parametrized........" << endl;
         this->name = name;
@@ -96,7 +96,7 @@ public:
         if (marks != nullptr)
             delete[]marks;
     }
-    ~Student()
+    ~Person()
     {
         cout << "Destructor " << name << endl;
         DeleteMarks();
@@ -105,7 +105,7 @@ public:
 
 int main()
 {
-    Student st1;//default constructor
+    Person st1;//default constructor
     //st1.setName("Vasia");
     //st1.Initialize("Bob",25);
     st1.Show();
@@ -118,7 +118,7 @@ int main()
     ////st1.setAge(33);
     //st1.Show();
     //st1.DeleteMarks();   
-    Student st2("Mark", 12);
+    Person st2("Mark", 12);
     //st2.setName("Olga");
     st2.Show();
     st2.AddMark(12);
