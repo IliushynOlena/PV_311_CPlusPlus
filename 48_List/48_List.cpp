@@ -1,10 +1,17 @@
 #include <iostream>
 #include <list>
+#include <vector>
+#include <stack>
+#include <queue>
 #include <iomanip>
 using namespace std;
 
 void Print(list<int>& l1, list<int>& l2)
 {
+	list<int> st(30);
+	
+	
+	
 	cout << "List 1 : ";
 	list<int>::iterator it;
 	for (it = l1.begin(); it != l1.end(); it++)
